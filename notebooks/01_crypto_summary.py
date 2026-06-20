@@ -192,3 +192,4 @@ print(f"Total de monedas resumidas: {result_df.count()}")
 print("Job ejecutado correctamente.")
 print(f"Fuente: {source_table}")
 print(f"Salida: {output_table}")
+
