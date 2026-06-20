@@ -1,0 +1,29 @@
+# Databricks Declarative Automation Bundle
+# Lab 5: De notebooks a proyectos reproducibles en Databricks
+
+bundle:
+  name: crypto_lakehouse_bundle
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Catalogo de Unity Catalog usado en los laboratorios.
+    default: workspace
+  schema:
+    description: Esquema/base de datos usado en los laboratorios.
+    default: bigdata
+  source_table:
+    description: Tabla fuente creada en el Lab 3.
+    default: workspace.bigdata.crypto_prices_lab3_gold
+  output_table:
+    description: Tabla resumen generada por este bundle.
+    default: workspace.bigdata.crypto_bundle_summary
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
