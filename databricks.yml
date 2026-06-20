@@ -19,7 +19,7 @@ variables:
     default: workspace.bigdata.crypto_prices_lab3_gold
   output_table:
     description: Tabla resumen generada por este bundle.
-    default: workspace.bigdata.crypto_bundle_summary
+    default: workspace.bigdata.crypto_bundle_summary_lab5
 
 targets:
   dev:

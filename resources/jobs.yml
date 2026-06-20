@@ -1,12 +1,9 @@
 resources:
   jobs:
     crypto_summary_job:
-      name: ${bundle.name}_${bundle.target}_crypto_summary_job
-      description: Job de demostracion para resumir datos cripto desde una tabla Delta.
-
+      name: crypto_summary_job
       tasks:
         - task_key: crypto_summary_task
-          description: Calcula resumen por moneda y escribe una tabla Delta de salida.
           notebook_task:
             notebook_path: ../notebooks/01_crypto_summary.py
             base_parameters:
@@ -14,9 +11,3 @@ resources:
               schema: ${var.schema}
               source_table: ${var.source_table}
               output_table: ${var.output_table}
-          environment_key: default
-
-      environments:
-        - environment_key: default
-          spec:
-            client: "1"
